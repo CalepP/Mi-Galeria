@@ -3,6 +3,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import GaleriaEditor from './pages/GaleriaEditor'
+import GaleriaCliente from './pages/GaleriaCliente'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/galeria/:id" element={<GaleriaEditor />} />
+        <Route path="/g/:slug" element={<GaleriaCliente />} />
       </Routes>
     </BrowserRouter>
   )
