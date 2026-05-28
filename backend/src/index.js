@@ -3,6 +3,7 @@ const cors = require('cors')
 require('dotenv').config()
 
 const authRoutes = require('./routes/auth')
+const galeriasRoutes = require('./routes/galerias')
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -12,6 +13,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/auth', authRoutes)
+app.use('/api/galerias', galeriasRoutes)
 
 app.get('/', (req, res) => {
   res.json({ message: '🎯 Mi Galería API funcionando' })
