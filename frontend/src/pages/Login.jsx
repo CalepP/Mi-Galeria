@@ -153,7 +153,7 @@ export default function Login() {
               Créala gratis
             </Link>
           </p>
-          <p className="text-center text-xs mt-12 tracking-widest" style={{ color: '#c9a96e', opacity: 0.5 }}>
+          <p className="text-center text-xs mt-12 tracking-widest" style={{ color: '#c8a158', opacity: 0.5 }}>
             ✦ FOTOGRAFÍA · ARTE · EMOCIÓN ✦
           </p>
         </div>

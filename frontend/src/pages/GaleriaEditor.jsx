@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDropzone } from 'react-dropzone'
 
 const CameraIcon = ({ size = 28, color = '#c9a96e' }) => (
@@ -23,6 +24,7 @@ const musicaOpciones = [
 
 export default function GaleriaEditor() {
   const [tab, setTab] = useState('fotos') // fotos | ajustes | actividad
+  const navigate = useNavigate()
   const [fotos, setFotos] = useState([])
   const [seleccionadas, setSeleccionadas] = useState([])
   const [modoSeleccion, setModoSeleccion] = useState(false)
@@ -78,21 +80,25 @@ export default function GaleriaEditor() {
 
       {/* Sidebar */}
       <div className="fixed left-0 top-0 h-full w-16 flex flex-col items-center py-6 gap-6 z-50 border-r" style={{ background: '#2a1f14', borderColor: '#3d2b1a' }}>
-        <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4" style={{ borderColor: '#c9a96e' }}>
-          <span className="font-serif italic text-sm" style={{ color: '#c9a96e' }}>MG</span>
-        </div>
-        {[
-          { icon: '←', label: 'Volver' },
-          { icon: '⊞', label: 'Galerías' },
-          { icon: '⚙', label: 'Config' },
-        ].map((item, i) => (
-          <button key={i} title={item.label}
-            className="w-10 h-10 flex items-center justify-center rounded transition-all text-lg"
-            style={{ color: '#6b4c2a' }}>
-            {item.icon}
-          </button>
-        ))}
-      </div>
+  <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4" style={{ borderColor: '#c9a96e' }}>
+    <span className="font-serif italic text-sm" style={{ color: '#c9a96e' }}>MG</span>
+  </div>
+  <button onClick={() => navigate('/dashboard')} title="Volver al dashboard"
+    className="w-10 h-10 flex items-center justify-center rounded transition-all text-lg"
+    style={{ color: '#c9a96e' }}>
+    ←
+  </button>
+  <button title="Galerías"
+    className="w-10 h-10 flex items-center justify-center rounded transition-all text-lg"
+    style={{ color: '#6b4c2a' }}>
+    ⊞
+  </button>
+  <button title="Config"
+    className="w-10 h-10 flex items-center justify-center rounded transition-all text-lg"
+    style={{ color: '#6b4c2a' }}>
+    ⚙
+  </button>
+</div>
 
       <div className="ml-16">
 
